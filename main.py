@@ -397,20 +397,17 @@ class Reaction():
 		return self.__str__()
 
 """
-sys = System("Relaxation oscillator, no buffer", 1)
-print sys
-A = sys.add_component(AND, "1", "1")
-B = sys.add_component(NOT, "1", "1")
-print A
-print B
+rel_oscillator_1 = System("Relaxation oscillator, no buffer")
+A = rel_oscillator_1.add_component(AND, "A", "A")
+B = rel_oscillator_1.add_component(NOT, "A", "A")
+print rel_oscillator_1
 
 
-sys = System("Relaxation oscillator, with buffer", 1)
-A = sys.add_component(AND, "1", "1")
-B = sys.add_component(BUF, "1", sys.new_domain())
-C = sys.add_component(NOT, B.out_domain, "1")
+rel_oscillator_2 = System("Relaxation oscillator, with buffer")
+A = rel_oscillator_2.add_component(AND, "A", "A")
+B = rel_oscillator_2.add_component(BUF, "A", rel_oscillator_2.new_domain())
+C = rel_oscillator_2.add_component(NOT, B.out_domain, "A")
 print sys
-#print "\t|\n".join([ str(r) for r in sys.get_reactions() ])
 """
 
 sys_AND = System("AND gate", is_dynamic = False)
